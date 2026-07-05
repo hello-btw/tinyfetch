@@ -3,7 +3,7 @@ proc getMemoryInfo(): string =
   var totalMem = 0.0
   var availableMem = 0.0
   for line in lines("/proc/meminfo"):
-    let parts = line.splitWhitespace()
+    let parts = strutils.splitWhitespace(line)
     if parts.len >= 2:
       if parts[0] == "MemTotal:":
         totalMem = parts[1].parseFloat() / 1024.0 / 1024.0
