@@ -20,7 +20,7 @@ proc getOSName(): string =
         break
 let user = getEnv("USER")
 let host = getHostname()
-let kernelData = readFile("/proc/version").strutils.splitWhitespace()
+let kernelData = strutils.splitWhitespace(readFile("/proc/version"))
 let kernelVersion = if kernelData.len > 2: kernelData[2] else: "Unknown"
 let osPadded     = getOSName().runeAlignLeft(25).runeSubstr(0, 24)
 let memPadded    = getMemoryInfo().runeAlignLeft(25).runeSubstr(0, 24)
