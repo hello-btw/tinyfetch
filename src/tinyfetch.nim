@@ -26,11 +26,11 @@ let osPadded     = getOSName().alignLeft(25)[0..24]
 let memPadded    = getMemoryInfo().alignLeft(25)[0..24]
 let kernelPadded = kernelVersion.alignLeft(25)[0..24]
 echo ""
-styledEcho(fgRed, "              <", fgBlue, user, fgRed, ">-", fgYellow, "M", fgRed, "-<", fgBlue, host, fgRed, ">")
-styledEcho(fgMagenta, " .----------------------------------------------.")
-styledEcho(fgMagenta, " | ", fgBlack, "(", fgDefault, "o", fgYellow, "_  ", fgBlack, "(", fgDefault, "o", fgYellow, "_  ", fgMagenta, "| ", fgBlue, "OS:     ", fgCyan, osPadded, fgMagenta, "|")
-styledEcho(fgMagenta, " | ", fgBlack, "/", fgBlack, "/", fgBlack, "\\  ", fgBlack, "/", fgBlack, "/", fgBlack, "\\  ", fgMagenta, "| ", fgBlue, "Kernel: ", fgCyan, kernelPadded, fgMagenta, "|")
-styledEcho(fgMagenta, " | ", fgBlack, "V_/_ ", fgBlack, "V_/_ ", fgMagenta, "| ", fgBlue, "Memory: ", fgCyan, memPadded, fgMagenta, "|")
-styledEcho(fgMagenta, " '----------------------------------------------'")
-styledEcho(fgRed, "    <---->", fgGreen, "<---->", fgYellow, "<---->", fgBlue, "<---->", fgMagenta, "<---->", fgCyan, "<---->", fgBlack, "<---->" )
+styledEcho(fgRed, "                <", fgBlue, user, fgRed, ">-", fgYellow, "M", fgRed, "-<", fgBlue, host, fgRed, ">")
+styledEcho(fgMagenta, " .---------------------------------------------------.")
+styledEcho(fgMagenta, " | ", fgBlack, "(", fgDefault, "o", fgYellow, "_  ", fgBlack, "(", fgDefault, "o", fgYellow, "_  ", fgMagenta, "|", fgBlue, " 󰻀 ", fgMagenta, " | ", fgBlue, "OS:     ", fgCyan, osPadded, fgMagenta, "|")
+styledEcho(fgMagenta, " | ", fgBlack, "/", fgBlack, "/", fgBlack, "\\  ", fgBlack, "/", fgBlack, "/", fgBlack, "\\  ", fgMagenta, "|", fgBlue, " 󰌢 ", fgMagenta, " | ", fgBlue, "Kernel: ", fgCyan, kernelPadded, fgMagenta, "|")
+styledEcho(fgMagenta, " | ", fgBlack, "V_/_ ", fgBlack, "V_/_ ", fgMagenta, "|", fgBlue, " 󰍛 ", fgMagenta, " | ", fgBlue, "Memory: ", fgCyan, memPadded, fgMagenta, "|")
+styledEcho(fgMagenta, " '---------------------------------------------------'")
+styledEcho(fgRed, "      <---->", fgGreen, "<---->", fgYellow, "<---->", fgBlue, "<---->", fgMagenta, "<---->", fgCyan, "<---->", fgBlack, "<---->" )
 echo ""
