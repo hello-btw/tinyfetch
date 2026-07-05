@@ -1,9 +1,9 @@
-import std/[os, nativesockets, strutils, terminal, strformat, unicode]
+import std/[os, nativesockets, strutils, terminal, strformat]
 proc getMemoryInfo(): string =
   var totalMem = 0.0
   var availableMem = 0.0
   for line in lines("/proc/meminfo"):
-    let parts = strutils.splitWhitespace(line)
+    let parts = line.splitWhitespace()
     if parts.len >= 2:
       if parts[0] == "MemTotal:":
         totalMem = parts[1].parseFloat() / 1024.0 / 1024.0
@@ -20,11 +20,11 @@ proc getOSName(): string =
         break
 let user = getEnv("USER")
 let host = getHostname()
-let kernelData = strutils.splitWhitespace(readFile("/proc/version"))
+let kernelData = readFile("/proc/version").splitWhitespace()
 let kernelVersion = if kernelData.len > 2: kernelData[2] else: "Unknown"
-let osPadded     = unicode.alignLeft(getOSName(), 25).runeSubstr(0, 24)
-let memPadded    = unicode.alignLeft(getMemoryInfo(), 25).runeSubstr(0, 24)
-let kernelPadded = unicode.alignLeft(kernelVersion, 25).runeSubstr(0, 24)
+let osPadded     = getOSName().alignLeft(25)[0..24]
+let memPadded    = getMemoryInfo().alignLeft(25)[0..24]
+let kernelPadded = kernelVersion.alignLeft(25)[0..24]
 echo ""
 styledEcho(fgRed, "              <", fgBlue, user, fgRed, ">-", fgYellow, "M", fgRed, "-<", fgBlue, host, fgRed, ">")
 styledEcho(fgMagenta, " .----------------------------------------------.")
