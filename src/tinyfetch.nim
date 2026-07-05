@@ -22,9 +22,9 @@ let user = getEnv("USER")
 let host = getHostname()
 let kernelData = strutils.splitWhitespace(readFile("/proc/version"))
 let kernelVersion = if kernelData.len > 2: kernelData[2] else: "Unknown"
-let osPadded     = getOSName().runeAlignLeft(25).runeSubstr(0, 24)
-let memPadded    = getMemoryInfo().runeAlignLeft(25).runeSubstr(0, 24)
-let kernelPadded = kernelVersion.runeAlignLeft(25).runeSubstr(0, 24)
+let osPadded     = getOSName().alignLeft(25).runeSubstr(0, 24)
+let memPadded    = getMemoryInfo().alignLeft(25).runeSubstr(0, 24)
+let kernelPadded = kernelVersion.alignLeft(25).runeSubstr(0, 24)
 echo ""
 styledEcho(fgRed, "              <", fgBlue, user, fgRed, ">-", fgYellow, "M", fgRed, "-<", fgBlue, host, fgRed, ">")
 styledEcho(fgMagenta, " .----------------------------------------------.")
