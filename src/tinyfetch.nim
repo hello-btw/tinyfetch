@@ -1,4 +1,4 @@
-import std/[os, nativesockets, strutils, terminal, strformat]
+import std/[os, nativesockets, strutils, terminal, strformat, unicode]
 proc getMemoryInfo(): string =
   var totalMem = 0.0
   var availableMem = 0.0
