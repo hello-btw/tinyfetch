@@ -6,4 +6,5 @@ git clone https://github.com/hello-btw/tinyfetch && cd tinyfetch && chmod +x tin
 git clone https://github.com/hello-btw/tinyfetch && cd tinyfetch && nim c -d:release src/tinyfetch.nim && sudo mv src/tinyfetch /usr/local/bin/tinyfetch-nim
 # Usage
 tinyfetch
+
 tinyfetch-nim
