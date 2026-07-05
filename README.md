@@ -1,7 +1,7 @@
 # tinyfetch
 A minimal system fetch tool for linux
 # tinyfetch (bash edition) installation
-git clone https://github.com/hello-btw/tinyfetch && cd tinyfetch && chmod +x tinyfetch && sudo mv tinyfetch /usr/local/bin/
+git clone https://github.com/hello-btw/tinyfetch && cd tinyfetch && chmod +x tinyfetch && sudo mv tinyfetch /usr/local/bin/ && cd -
 # tinyfetch (nim edition) installation
 git clone https://github.com/hello-btw/tinyfetch && cd tinyfetch && nim c -d:release src/tinyfetch.nim && sudo mv src/tinyfetch
 # Usage
