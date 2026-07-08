@@ -4,7 +4,6 @@ A minimal system fetch tool for linux
 curl -L https://raw.githubusercontent.com/hello-btw/tinyfetch/refs/heads/main/setup.sh -o setup.sh
 
 sh setup.sh
-./setup.sh
 # Usage
 tinyfetch
 
