@@ -2,7 +2,7 @@
 # Tinyfetch installer
 clear
 echo "\n ----Tinyfetch Installer----\n"
-echo "\n You will need nim and bash for this to work!\n"
+echo "\n You will need curl, nim and bash for this to work!\n"
 echo "\n What do you use?\n"
 echo "\n [1] sudo\n [2] doas\n [3] please\n [4] none\n"
 read root
