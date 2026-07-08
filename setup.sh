@@ -56,4 +56,3 @@ elif [ "$version" = "2" ]; then
 		exit 1
 	fi
 fi
-clear
