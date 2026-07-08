@@ -34,7 +34,7 @@ if [ "$version" = "1" ]; then
 		curl -L https://raw.githubusercontent.com/hello-btw/tinyfetch/refs/heads/main/src/tinyfetch.nim -o tinyfetch.nim
 		nim c -d:release tinyfetch.nim
 		$root cp tinyfetch /usr/local/bin/tinyfetch-nim && echo "\n Installed Tinyfetch Nim Edition!\n"
-		rm tinyfetch
+		rm {tinyfetch,tinyfetch.nim}
 		echo "Usage: tinyfetch-nim"
 	elif [ "$YesNo" = "N" ];  then
 		echo "Installation Cancelled"
