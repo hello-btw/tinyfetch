@@ -31,10 +31,10 @@ if [ "$version" = "1" ]; then
 	read YesNo
 	if [ "$YesNo" = "Y" ]; then
 		echo "Installing"
-		git clone https://github.com/hello-btw/tinyfetch; cd tinyfetch
-		nim c -d:release src/tinyfetch.nim
-		$root cp src/tinyfetch /usr/local/bin/tinyfetch-nim && echo "\n Installed Tinyfetch Nim Edition!\n"
-		rm -rf tinyfetch
+		curl -L https://raw.githubusercontent.com/hello-btw/tinyfetch/refs/heads/main/src/tinyfetch.nim -o tinyfetch.nim
+		nim c -d:release tinyfetch.nim
+		$root cp tinyfetch /usr/local/bin/tinyfetch-nim && echo "\n Installed Tinyfetch Nim Edition!\n"
+		rm tinyfetch
 		echo "Usage: tinyfetch-nim"
 	elif [ "$YesNo" = "N" ];  then
 		echo "Installation Cancelled"
@@ -46,10 +46,10 @@ elif [ "$version" = "2" ]; then
 	read YesNo
 	if [ "$YesNo" = "Y" ]; then
 		echo "Installing"
-		git clone https://github.com/hello-btw/tinyfetch; cd tinyfetch
-		chmod +x bash/tinyfetch
-		$root cp bash/tinyfetch /usr/local/bin/tinyfetch && echo "\n Installed Tinyfetch Bash Edition!\n"
-		rm -rf tinyfetch
+		curl -L https://raw.githubusercontent.com/hello-btw/tinyfetch/refs/heads/main/bash/tinyfetch -o tinyfetch
+		chmod +x tinyfetch
+		$root cp tinyfetch /usr/local/bin/tinyfetch && echo "\n Installed Tinyfetch Bash Edition!\n"
+		rm tinyfetch
 		echo "Usage: tinyfetch"
 	elif [ "$YesNo" = "N" ]; then
 		echo "Installation Cancelled"
