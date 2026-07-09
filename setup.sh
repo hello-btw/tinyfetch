@@ -59,7 +59,7 @@ if [ "$version" = "1" ]; then
 		exit 1
 	fi
 elif [ "$version" = "2" ]; then
-	printf "\nInstall [Y/N]?\n"
+	printf "\n Install [Y/N]?\n"
 	read YesNo
 	if [ "$YesNo" = "y" ]; then
 		curl -L https://raw.githubusercontent.com/hello-btw/tinyfetch/refs/heads/main/bash/tinyfetch -o tinyfetch
@@ -90,4 +90,3 @@ elif [ "$version" = "2" ]; then
 		exit 1
 	fi
 fi
-clear
