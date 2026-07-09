@@ -2,7 +2,7 @@
 # Tinyfetch installer
 clear
 if command -v figlet > /dev/null 2>&1; then
-    figlet " Tinyfetch Installer "
+    figlet "Tinyfetch Installer"
 else
     printf " \n=== Tinyfetch Installer ===\n"
 fi
@@ -23,7 +23,7 @@ else
 	exit 1
 fi
 printf "\n\n\n\n --Version--\n\n"
-printf " \n[1] Nim\n [2] Bash\n\n"
+printf "\n [1] Nim\n [2] Bash\n\n"
 read version
 if [ "$version" = "1" ]; then
 	printf "\nInstall [Y/N]?\n"
