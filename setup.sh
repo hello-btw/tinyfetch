@@ -1,58 +1,93 @@
 #!/bin/sh
 # Tinyfetch installer
 clear
-echo "\n ----Tinyfetch Installer----\n"
-echo "\n You will need curl, nim and bash for this to work!\n"
-echo "\n What do you use?\n"
-echo "\n [1] sudo\n [2] doas\n [3] please\n [4] none\n"
+if command -v figlet > /dev/null 2>&1; then
+    figlet " Tinyfetch Installer "
+else
+    printf " \n=== Tinyfetch Installer ===\n"
+fi
+printf "\n\n\n\n --Super User--\n\n"
+printf "\n [1] Sudo\n [2] Doas\n [3] None\n\n"
 read root
 if [ "$root" = "1" ]; then
 	root="sudo"
-	echo "\n Chosen sudo!\n"
+	printf "\n\n Chosen Sudo!\n"
 elif [ "$root" = "2" ]; then
 	root="doas"
-	echo "\n Chosen doas!\n"
+	printf "\n\n Chosen Doas!\n"
 elif [ "$root" = "3" ]; then
-	root="please"
-	echo "\n Chosen please!\n"
-elif [ "$root" = "4" ]; then
 	root=""
-	echo "\n Chosen none!\n"
+	printf "\n\n Chosen None!\n"
 else
-	echo "\n [$root] unknown option\n"
+	printf "\n\n [$root] Unknown Option\n"
 	exit 1
 fi
-echo " Nim or Bash?"
-echo "\n [1] Nim\n [2] Bash\n"
+printf "\n\n\n\n --Version--\n\n"
+printf " \n[1] Nim\n [2] Bash\n\n"
 read version
 if [ "$version" = "1" ]; then
-	echo " Chosen Nim edition!"
-	echo "\n Install [Y/N]?\n"
+	printf "\nInstall [Y/N]?\n"
 	read YesNo
-	if [ "$YesNo" = "Y" ]; then
-		echo "Installing"
+	if [ "$YesNo" = "y" ]; then
 		curl -L https://raw.githubusercontent.com/hello-btw/tinyfetch/refs/heads/main/src/tinyfetch.nim -o tinyfetch.nim
 		nim c -d:release tinyfetch.nim
-		$root cp tinyfetch /usr/local/bin/tinyfetch-nim && echo "\n Installed Tinyfetch Nim Edition!\n"
-		rm {tinyfetch,tinyfetch.nim}
-		echo "Usage: tinyfetch-nim"
-	elif [ "$YesNo" = "N" ];  then
-		echo "Installation Cancelled"
+		if [ -n "$root" ]; then
+			$root mv tinyfetch /usr/local/bin/tinyfetch-nim && printf "\n\n Installed Tinyfetch Nim Edition!\n\n"
+		else
+			mv tinyfetch /usr/local/bin/tinyfetch-nim && printf "\n\n Installed Tinyfetch Nim Edition!\n\n"
+		fi
+		rm tinyfetch.nim
+		printf "\n Installation Complete!\n Usage: tinyfetch-nim\n"
+	elif [ "$YesNo" = "Y" ]; then
+		curl -L https://raw.githubusercontent.com/hello-btw/tinyfetch/refs/heads/main/src/tinyfetch.nim -o tinyfetch.nim
+		nim c -d:release tinyfetch.nim
+		if [ -n "$root" ]; then
+			$root mv tinyfetch /usr/local/bin/tinyfetch-nim && printf "\n\n Installed Tinyfetch Nim Edition\n\n"
+		else
+			mv tinyfetch /usr/local/bin/tinyfetch-nim && printf "\n\n Installed Tinyfetch Nim Edition!\n\n"
+		fi
+		rm tinyfetch.nim
+		printf "\n Installation Complete!\n Usage: tinyfetch-nim\n"
+	elif [ "$YesNo" = "n" ]; then
+		printf "\n Cancelled Installation\n"
+		exit 1
+	elif [ "$YesNo" = "N" ]; then
+		printf "\n Cancelled Installation\n"
+		exit 1
+	else
+		printf "\n\n [$YesNo] Unknown Option\n"
 		exit 1
 	fi
 elif [ "$version" = "2" ]; then
-	echo " Chosen Bash edition!"
-	echo "\n Install [Y/N]?\n"
+	printf "\nInstall [Y/N]?\n"
 	read YesNo
-	if [ "$YesNo" = "Y" ]; then
-		echo "Installing"
+	if [ "$YesNo" = "y" ]; then
 		curl -L https://raw.githubusercontent.com/hello-btw/tinyfetch/refs/heads/main/bash/tinyfetch -o tinyfetch
 		chmod +x tinyfetch
-		$root cp tinyfetch /usr/local/bin/tinyfetch && echo "\n Installed Tinyfetch Bash Edition!\n"
-		rm tinyfetch
-		echo "Usage: tinyfetch"
+		if [ -n "$root" ]; then
+			$root mv tinyfetch /usr/local/bin/tinyfetch && printf "\n\n Installed Tinyfetch Bash Edition!\n\n"
+		else
+			mv tinyfetch /usr/local/bin/tinyfetch && printf "\n\n Installed Tinyfetch Bash Edition!\n\n"
+		fi
+		printf "\n Installation Complete!\n Usage: tinyfetch\n"
+	elif [ "$YesNo" = "Y" ]; then
+		curl -L https://raw.githubusercontent.com/hello-btw/tinyfetch/refs/heads/main/bash/tinyfetch -o tinyfetch
+		chmod +x tinyfetch
+		if [ -n "$root" ]; then
+			$root mv tinyfetch /usr/local/bin/tinyfetch && printf "\n\n Installed Tinyfetch Bash Edition!\n\n"
+		else
+			mv tinyfetch /usr/local/bin/tinyfetch && printf "\n\n Installed Tinyfetch Bash Edition!\n\n"
+		fi
+		printf "\n Installation Complete!\n Usage: tinyfetch\n"
+	elif [ "$YesNo" = "n" ]; then
+		printf "\n Cancelled Installation\n"
+		exit 1
 	elif [ "$YesNo" = "N" ]; then
-		echo "Installation Cancelled"
+		printf "\n Cancelled Installation\n"
+		exit 1
+	else
+		printf "\n\n [$YesNo] Unknown Option\n"
 		exit 1
 	fi
 fi
+clear
