@@ -1,3 +1,5 @@
 src/tinyfetch
 src/tinyfetch-nim
 nimcache/
+nimdoc/
+htmldocs/
