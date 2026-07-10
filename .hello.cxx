@@ -1,6 +1,6 @@
 #include <stdio.h>
-
+// hello-btw
 int main() {
-    printf("\n\nhello-btw\nwas here\n\ntinyfetch :D\n");
+    printf("\nhello-btw\nwas here\n\ntinyfetch :D\n\n");
     return 0;
 }
