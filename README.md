@@ -9,4 +9,4 @@ sh setup.sh
 # Usage
 tinyfetch
 
-tinyfetch-nim
+tinyfetch-nim (if used custom install and chose nim)
