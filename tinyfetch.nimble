@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.0"
+version       = "0.1.2"
 author        = "hello-btw"
 description   = "A minimal system fetch tool"
 license       = "GPL-3.0-or-later"
