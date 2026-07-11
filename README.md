@@ -3,13 +3,13 @@ A minimal system fetch tool for linux
 ### Installation (needs nim and nimble)
 nimble install tinyfetch
 
+or
 
+curl -L https://raw.githubusercontent.com/hello-btw/tinyfetch/refs/heads/main/setup.sh -o 
 
-Custom install (bash edition and nim edition) (recommended for power users)
+setup.sh
 
-curl -L https://raw.githubusercontent.com/hello-btw/tinyfetch/refs/heads/main/setup.sh -o setup.sh
-
-sh setup.sh
+(Recommend for power users)
 ### Usage
 tinyfetch
 
