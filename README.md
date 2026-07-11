@@ -5,9 +5,9 @@ nimble install tinyfetch (needs nim and nimble)
 
 or
 
-curl -L https://raw.githubusercontent.com/hello-btw/tinyfetch/refs/heads/main/setup.sh -o 
+curl -L https://raw.githubusercontent.com/hello-btw/tinyfetch/refs/heads/main/setup.sh -o setup.sh
 
-setup.sh
+sh setup.sh
 
 (Recommend for power users)
 ### Usage
