@@ -1,7 +1,7 @@
 # tinyfetch
 A minimal system fetch tool for linux
-### Installation (needs nim and nimble)
-nimble install tinyfetch
+### Installation
+nimble install tinyfetch (needs nim and nimble)
 
 or
 
